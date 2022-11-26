@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "allowJs": true,
-    "emitDeclarationOnly": true,
+    "module": "commonjs",
     "strict": true,
     "declaration": true,
     "removeComments": true,
-    "target": "es2015",
+    "target": "es3",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./src",
