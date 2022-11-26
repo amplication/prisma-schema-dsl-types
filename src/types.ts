@@ -33,9 +33,9 @@ export type DataSource = {
 export type Generator = {
   name: string;
   provider: string;
-  output: string | null;
+  output?: string | null;
   /** @see https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/generators#binary-targets */
-  binaryTargets: string[];
+  binaryTargets?: string[];
 };
 
 /**

@@ -1,6 +1,6 @@
 {
   "name": "prisma-schema-dsl-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "types library for prisma-schema-dsl",
   "main": "dist/index.js",
   "scripts": {
