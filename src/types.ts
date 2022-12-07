@@ -103,6 +103,7 @@ export type ScalarField = BaseField & {
   isUnique: boolean;
   isUpdatedAt: boolean;
   default: ScalarFieldDefault;
+  isForeignKey:boolean;
 };
 
 export type ObjectField = BaseField & {
