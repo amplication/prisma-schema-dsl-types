@@ -12,8 +12,12 @@ export enum DataSourceProvider {
  * Prisma's Schema data source url environment variable
  * @see https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/data-sources#examples
  */
-export class DataSourceURLEnv {
-  constructor(public name: string) {}
+export type DataSourceURLEnv = {
+  name: string;
+}
+
+export function isDataSourceURLEnv (url: string | DataSourceURLEnv) : url is DataSourceURLEnv{
+  return (url as DataSourceURLEnv).name !== undefined;
 }
 
 /**
@@ -85,8 +89,12 @@ export const UUID = "uuid";
 /** Represents default values that can't be expressed in the Prisma schema. Only available after introspection. */
 export const DB_GENERATED = "dbgenerated";
 
-export class CallExpression {
-  constructor(public callee: string) {}
+export type CallExpression = {
+  callee: string;
+}
+
+export function isCallExpression(object: unknown) : object is CallExpression {
+  return (object as CallExpression).callee !== undefined;
 }
 
 export enum FieldKind {
