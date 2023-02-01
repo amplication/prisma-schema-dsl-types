@@ -12,7 +12,7 @@ export enum DataSourceProvider {
  * Prisma's Schema data source url environment variable
  * @see https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/data-sources#examples
  */
-export type DataSourceURLEnv = {
+export interface DataSourceURLEnv = {
   name: string;
 }
 
@@ -89,7 +89,7 @@ export const UUID = "uuid";
 /** Represents default values that can't be expressed in the Prisma schema. Only available after introspection. */
 export const DB_GENERATED = "dbgenerated";
 
-export type CallExpression = {
+export interface CallExpression = {
   callee: string;
 }
 
