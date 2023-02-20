@@ -57,6 +57,19 @@ export enum ScalarType {
   Json = "Json",
 }
 
+/**
+ * Prisma's referential actions
+ * @see https://www.prisma.io/docs/concepts/components/prisma-schema/relations/referential-actions#types-of-referential-actions
+ */
+export enum ReferentialActions {
+  NONE = "NONE",
+  Cascade = "Cascade",
+  Restrict = "Restrict",
+  NoAction = "NoAction",
+  SetNull = "SetNull",
+  SetDefault = "SetDefault",
+}
+
 /** Create a sequence of integers in the underlying database and assign the incremented values to the ID values of the created records based on the sequence */
 export const AUTO_INCREMENT = "autoincrement";
 
@@ -103,7 +116,7 @@ export type ScalarField = BaseField & {
   isUnique: boolean;
   isUpdatedAt: boolean;
   default: ScalarFieldDefault;
-  isForeignKey:boolean;
+  isForeignKey: boolean;
 };
 
 export type ObjectField = BaseField & {
@@ -112,7 +125,8 @@ export type ObjectField = BaseField & {
   relationName: string | null;
   relationToFields: string[];
   relationToReferences: string[];
-  relationOnDelete: "NONE";
+  relationOnDelete?: ReferentialActions;
+  relationOnUpdate?: ReferentialActions;
 };
 
 export type Model = {
