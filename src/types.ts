@@ -16,7 +16,9 @@ export interface DataSourceURLEnv {
   name: string;
 }
 
-export function isDataSourceURLEnv (url: string | DataSourceURLEnv) : url is DataSourceURLEnv{
+export function isDataSourceURLEnv(
+  url: string | DataSourceURLEnv
+): url is DataSourceURLEnv {
   return (url as DataSourceURLEnv).name !== undefined;
 }
 
@@ -93,7 +95,7 @@ export interface CallExpression {
   callee: string;
 }
 
-export function isCallExpression(object: unknown) : object is CallExpression {
+export function isCallExpression(object: unknown): object is CallExpression {
   return (object as CallExpression).callee !== undefined;
 }
 
@@ -108,6 +110,8 @@ export type BaseField = {
   isRequired: boolean;
   /** @see https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema#comments */
   documentation?: string;
+  /** @see https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#attributes */
+  attributes?: string[] | null;
 };
 
 export type ScalarFieldDefault =
@@ -144,6 +148,8 @@ export type Model = {
   map?: string;
   /** @see https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema#comments */
   documentation?: string;
+  /** @see https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#attributes */
+  attributes?: string[] | null;
 };
 
 export type Enum = {
