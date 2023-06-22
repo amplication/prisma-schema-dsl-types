@@ -55,8 +55,12 @@ export enum ScalarType {
   Boolean = "Boolean",
   /** Integer value */
   Int = "Int",
+  /** Arbitrary precision integer */
+  BigInt = "BigInt",
   /** Floating point number */
   Float = "Float",
+  /** Arbitrary precision decimal number */
+  Decimal = "Decimal",
   /** Timestamp */
   DateTime = "DateTime",
   /** JSON */
